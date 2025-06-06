@@ -1,0 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Courgette&family=Dancing+Script:wght@400..700&family=Lobster&family=Outfit:wght@100..900&family=Rubik+Wet+Paint&display=swap');
+@import "tailwindcss";
+*{
+  font-family: "Outfit", sans-serif;
+}
+
+@theme{
+  --color-primary:#4fbf8b;
+  --color-primary-dull:#44ae7c;
+}
