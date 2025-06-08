@@ -6,7 +6,7 @@ import toast from "react-hot-toast";
 export const AppContext = createContext();
 
 export const AppContextProvider = ({ children }) => {
-    const currency = import.meta.VITE_CURRENCY
+    const currency = "₹ "
     const navigate = useNavigate();
     const [user, setUser] = useState(null)
     const [isSeller, setIsSeller] = useState(false)
