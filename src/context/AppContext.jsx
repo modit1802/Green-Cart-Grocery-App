@@ -54,33 +54,33 @@ export const AppContextProvider = ({ children }) => {
             if (cartData[itemId] === 0) {
                 delete cartData[itemId];
             }
-
-            setCartItems(cartData); // first update the state
-            toast.success("Removed from the cart"); // then show toast
         }
+
+        toast.success("Removed from the cart"); // then show toast
+        setCartItems(cartData);
     };
-    
+
     // get cart item count
 
-    const getCartCount=()=>{
-        let totalcount=0;
-        for(const item in cartItems){
-            totalcount+=cartItems[item];
+    const getCartCount = () => {
+        let totalcount = 0;
+        for (const item in cartItems) {
+            totalcount += cartItems[item];
         }
         return totalcount
     }
 
     // get cart total amount
 
-    const getCartAmount=()=>{
-        let totalAmount=0;
-        for(const items in cartItems){
-            let iteminfo=products.find((product)=>product._id===items)
-            if (cartItems[items]>0) {
-                totalAmount+=iteminfo.offerPrice*cartItems[items]
+    const getCartAmount = () => {
+        let totalAmount = 0;
+        for (const items in cartItems) {
+            let iteminfo = products.find((product) => product._id === items)
+            if (cartItems[items] > 0) {
+                totalAmount += iteminfo.offerPrice * cartItems[items]
             }
         }
-        return Math.floor(totalAmount*100)/100;
+        return Math.floor(totalAmount * 100) / 100;
     }
 
     useEffect(() => {
@@ -93,7 +93,7 @@ export const AppContextProvider = ({ children }) => {
         setShowUserLogin, showUserLogin,
         products, currency, addToCart,
         updateCartItem, removeFromcart, cartItems,
-        searchQuery, setSearchQuery,getCartCount,getCartAmount
+        searchQuery, setSearchQuery, getCartCount, getCartAmount
     }
 
     return <AppContext.Provider value={value}>
