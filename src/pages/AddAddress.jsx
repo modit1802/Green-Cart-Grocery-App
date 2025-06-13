@@ -31,7 +31,7 @@ const AddAddress = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setAddress((prevAddress) => ({
-       ...AddAddress, 
+       ...prevAddress, 
        [name]: value
      }));
   };
@@ -69,12 +69,53 @@ const AddAddress = () => {
 
             <InputField handleChange={handleChange} address={address} name='email' type='email' placeholder='Email' />
             <InputField handleChange={handleChange} address={address} name='street' type='text' placeholder='Street' />
+            <div className='grid grid-cols-2 gap-4'>
+              <InputField
+                handleChange={handleChange}
+                address={address}
+                name='city'
+                type='text'
+                placeholder='city'
+              />
+              <InputField
+                handleChange={handleChange}
+                address={address}
+                name='Country'
+                type='text'
+                placeholder='Country'
+              />
+            </div>
+
+            <div className='grid grid-cols-2 gap-4'>
+              <InputField
+                handleChange={handleChange}
+                address={address}
+                name='Zipcode'
+                type='Number'
+                placeholder='ZipCode'
+              />
+              <InputField
+                handleChange={handleChange}
+                address={address}
+                name='State'
+                type='text'
+                placeholder='State'
+              />
+            </div>
+            <InputField
+                handleChange={handleChange}
+                address={address}
+                name='Phone'
+                type='text'
+                placeholder='Phone'
+              />
+
             
             <button
               type='submit'
-              className='mt-4 px-4 py-2 bg-primary text-white rounded'
+              className='mt-4 px-4 py-2 w-full cursor-pointer hover:bg-primary-dull bg-primary text-white rounded'
             >
-              Submit
+              Save Address
             </button>
           </form>
         </div>
